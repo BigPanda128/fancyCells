@@ -7,13 +7,13 @@ load('RTextCell.js');
 // Here's where you load the dataset
 // load('mountains.js');
 // load('houses.js');
-load('larder.js');
+load('tanks.js');
 
 // This code does date recognition so they can be right-justified
 //   You can turn it on and off with this variable
 var rightJustifyDates = true;
 // This regular expression contains logic-by-pattern to identify a date
-var dateReg = (rightJustifyDates?/^(\d{2}|\d)[.-/](\d|\d{2})[.-/]\d{2}$/:null);
+var dateReg = (rightJustifyDates?/^(\d{2}|\d)[.-/](\d|\d{2})[.-/]\d{2,4}$/:null);
 
 function dataTable(data) {
   var keys = Object.keys(data[0]);
@@ -39,4 +39,4 @@ function dataTable(data) {
   return [headers].concat(body);
 }
 
-print(drawTable(dataTable(LARDER_FILE)));
+print(drawTable(dataTable(TANKS)));
