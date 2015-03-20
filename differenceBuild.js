@@ -5,21 +5,23 @@
 
 load("tanks.js");
 
-var x, y;
 
 for(var i = 0; i < TANKS.length; i++) {
-	print(TANKS[i].name);
+	print(i + " " + TANKS[i].name);
 }
 
 function difference(x, y) {
-	print(TANK[x].name + " build date minus " + TANK[y].name + " build date");
-	var tank1 = new Date(TANK[x].built).getTime();
-	var tank2 = new Date(TANK[y].built).getTime();
-	var result = (tank1 - tank2)/86400000);
+	print(TANKS[x].name + " build date minus " + TANKS[y].name + " build date");
+	var tank1 = new Date(TANKS[x].built).getTime();
+	var tank2 = new Date(TANKS[y].built).getTime();
+	print(tank1);
+	print(tank2);
+	var result = Math.floor((tank1 - tank2) / -86400000);
+	//print(result);
 	return (result + " days apart");
 }
-
-difference(2,4);
+//print(new Date(TANKS[0].built).getTime());
+print(difference(2,4));
 
 /*
 print("pick one");
