@@ -5,11 +5,12 @@
 
 load("tanks.js");
 
-
+//display the list of tanks
 for(var i = 0; i < TANKS.length; i++) {
 	print(i + " " + TANKS[i].name);
 }
 
+//function that displays the difference between the tanks in days.
 function difference(x, y) {
 	print(TANKS[x].name + " build date minus " + TANKS[y].name + " build date");
 	var tank1 = new Date(TANKS[x].built).getTime();
@@ -17,4 +18,6 @@ function difference(x, y) {
 	var result = Math.floor((tank1 - tank2) / -86400000);
 	return ("The " + TANKS[x].name + " and " + TANKS[y].name + " were built " + result + " days apart");
 }
+
+//run func
 print(difference(2,4));
